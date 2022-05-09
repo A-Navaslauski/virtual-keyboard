@@ -221,7 +221,11 @@ const buildEngKeyboard = () => {
   rightCtrlBtn.style.flexBasis = '10%';
   rightCtrlBtn.style.maxWidth = '100%';
 
-  keyArray[57].textContent = localStorage.getItem('lang');
+  if (localStorage.lang) {
+    keyArray[57].textContent = localStorage.getItem('lang');
+  } else {
+    keyArray[57].textContent = 'En';
+  }
 
   if (keyArray[57].textContent === 'Ru') {
     for (let i = 0; i < keyArray.length; i += 1) {
